@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wittgenstein y la filosofía analítica — Historia de la Filosofía · IES Alquipir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAF9F5;
+            --bg-secondary: #F0EDE6;
+            --bg-card: #FFFFFF;
+            --text-primary: #2D2B28;
+            --text-secondary: #6B6560;
+            --text-tertiary: #9B9590;
+            --accent: #D97757;
+            --accent-hover: #C4603F;
+            --accent-light: rgba(217, 119, 87, 0.08);
+            --accent-light-hover: rgba(217, 119, 87, 0.14);
+            --blue-accent: #3B82B6;
+            --blue-light: rgba(59, 130, 182, 0.08);
+            --green-accent: #4A9D6E;
+            --green-light: rgba(74, 157, 110, 0.08);
+            --purple-accent: #7C5CBF;
+            --purple-light: rgba(124, 92, 191, 0.08);
+            --gold-accent: #B8860B;
+            --gold-light: rgba(184, 134, 11, 0.06);
+            --teal-accent: #2A8A8A;
+            --teal-light: rgba(42, 138, 138, 0.07);
+            --border: rgba(0, 0, 0, 0.06);
+            --border-hover: rgba(0, 0, 0, 0.12);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 2px 8px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-lg: 0 4px 16px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+            --shadow-xl: 0 8px 32px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.75;
+            min-height: 100vh;
+            font-size: 19px;
+        }
+
+        /* ═══ TOPBAR ═══ */
+        .topbar {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(250, 249, 245, 0.92);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 24px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .topbar-left { display: flex; align-items: center; gap: 12px; }
+        .topbar-logo { font-family: 'Instrument Serif', serif; font-size: 20px; color: var(--accent); letter-spacing: -0.5px; }
+        .topbar-divider { width: 1px; height: 20px; background: var(--border-hover); }
+        .topbar-section { font-size: 14px; color: var(--text-secondary); font-weight: 500; }
+        .btn-home {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; background: var(--accent); color: #fff;
+            border: none; border-radius: var(--radius-sm);
+            font-family: inherit; font-size: 13px; font-weight: 600;
+            cursor: pointer; text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-home:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .btn-home svg { width: 16px; height: 16px; }
+
+        /* ═══ HERO ═══ */
+        .hero { max-width: 1200px; margin: 0 auto; padding: 56px 24px 40px; text-align: center; }
+        .hero-overline {
+            display: inline-block; font-size: 12px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2.5px; color: var(--accent);
+            margin-bottom: 16px; padding: 6px 14px;
+            background: var(--accent-light); border-radius: 20px;
+        }
+        .hero h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(32px, 5.5vw, 52px); font-weight: 400;
+            line-height: 1.15; color: var(--text-primary);
+            margin-bottom: 20px; letter-spacing: -0.5px;
+        }
+        .hero h1 em { font-style: italic; color: var(--accent); }
+        .hero-subtitle { font-size: 20px; color: var(--text-secondary); max-width: 800px; margin: 0 auto 28px; line-height: 1.6; }
+        .hero-meta { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; font-size: 13px; color: var(--text-tertiary); }
+        .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+        /* ═══ INTRO QUOTE ═══ */
+        .intro-quote {
+            max-width: 1200px; margin: 0 auto 48px; padding: 28px 32px;
+            background: var(--gold-light); border-left: 4px solid var(--gold-accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-family: 'Instrument Serif', serif; font-size: 22px;
+            font-style: italic; color: var(--text-primary); line-height: 1.6;
+        }
+        .intro-quote cite { display: block; font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 14px; color: var(--text-tertiary); margin-top: 12px; font-weight: 500; }
+
+        /* ═══ CONTENT ═══ */
+        .content { max-width: 1200px; margin: 0 auto; padding: 0 24px 48px; }
+        .section-block { margin-bottom: 48px; }
+        .section-block-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+        .section-number { font-family: 'Instrument Serif', serif; font-size: 32px; color: var(--accent); opacity: 0.5; line-height: 1; min-width: 32px; }
+        .section-label h2 { font-family: 'Instrument Serif', serif; font-size: 28px; font-weight: 400; color: var(--text-primary); line-height: 1.2; }
+        .section-label .overline { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); }
+        .text-content { font-size: 19px; color: var(--text-primary); line-height: 1.8; }
+        .text-content p { margin-bottom: 16px; }
+        .text-content strong { color: var(--text-primary); font-weight: 600; }
+
+        /* ═══ CARDS ═══ */
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 48px; }
+        .card-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px; cursor: pointer;
+            text-align: left; transition: all 0.25s ease;
+            display: flex; flex-direction: column; gap: 8px;
+            position: relative; overflow: hidden; font-family: inherit;
+        }
+        .card-btn:hover { border-color: var(--border-hover); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+        .card-btn .card-icon { font-size: 28px; margin-bottom: 4px; }
+        .card-btn .card-title { font-family: 'Instrument Serif', serif; font-size: 20px; color: var(--text-primary); line-height: 1.3; }
+        .card-btn .card-desc { font-size: 16px; color: var(--text-secondary); line-height: 1.5; }
+        .card-btn .card-arrow { position: absolute; top: 20px; right: 20px; font-size: 18px; color: var(--accent); transition: transform 0.2s; }
+        .card-btn:hover .card-arrow { transform: translateX(3px); }
+        .card-btn.blue   { border-left: 3px solid var(--blue-accent); }
+        .card-btn.blue:hover   { background: var(--blue-light); }
+        .card-btn.green  { border-left: 3px solid var(--green-accent); }
+        .card-btn.green:hover  { background: var(--green-light); }
+        .card-btn.purple { border-left: 3px solid var(--purple-accent); }
+        .card-btn.purple:hover { background: var(--purple-light); }
+        .card-btn.gold   { border-left: 3px solid var(--gold-accent); }
+        .card-btn.gold:hover   { background: var(--gold-light); }
+        .card-btn.accent { border-left: 3px solid var(--accent); }
+        .card-btn.accent:hover { background: var(--accent-light); }
+        .card-btn.teal   { border-left: 3px solid var(--teal-accent); }
+        .card-btn.teal:hover   { background: var(--teal-light); }
+
+        /* ═══ MODAL ═══ */
+        .modal-overlay { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(0,0,0,0.45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); justify-content: center; align-items: center; padding: 24px; opacity: 0; transition: opacity 0.3s ease; }
+        .modal-overlay.active { display: flex; opacity: 1; }
+        .modal-box { background: var(--bg-primary); border-radius: var(--radius-lg); max-width: 920px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: var(--shadow-xl); position: relative; transition: all 0.3s ease; }
+        .modal-box.fullscreen { max-width: 100%; max-height: 100%; height: 100vh; border-radius: 0; }
+        .modal-topbar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; background: rgba(250, 249, 245, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+        .modal-topbar-title { font-family: 'Instrument Serif', serif; font-size: 18px; color: var(--text-primary); }
+        .modal-topbar-actions { display: flex; gap: 8px; }
+        .btn-modal-action { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; transition: all 0.2s; font-family: inherit; }
+        .btn-modal-action:hover { border-color: var(--border-hover); color: var(--text-primary); background: var(--bg-secondary); }
+        .btn-modal-action svg { width: 18px; height: 18px; }
+        .modal-content { padding: 32px; }
+        .modal-content h3 { font-family: 'Instrument Serif', serif; font-size: 28px; font-weight: 400; margin-bottom: 20px; color: var(--text-primary); line-height: 1.3; }
+        .modal-content h4 { font-size: 19px; font-weight: 600; margin: 24px 0 10px; color: var(--text-primary); }
+        .modal-content p { margin-bottom: 14px; font-size: 19px; line-height: 1.8; color: var(--text-primary); }
+        .modal-content ul, .modal-content ol { margin: 10px 0 18px 20px; font-size: 19px; line-height: 1.8; }
+        .modal-content li { margin-bottom: 6px; }
+        .modal-content .highlight-box { background: var(--accent-light); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 18px 0; font-size: 18px; }
+        .modal-content .highlight-box.blue  { background: var(--blue-light);  border-left-color: var(--blue-accent); }
+        .modal-content .highlight-box.teal  { background: var(--teal-light);  border-left-color: var(--teal-accent); }
+        .modal-content .highlight-box.green { background: var(--green-light); border-left-color: var(--green-accent); }
+        .modal-content .quote-box { background: var(--gold-light); border-left: 3px solid var(--gold-accent); padding: 16px 20px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 18px 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 20px; line-height: 1.6; }
+        .modal-content .quote-box cite { display: block; font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 14px; color: var(--text-tertiary); margin-top: 8px; }
+        .modal-content .concept-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 16px 0 20px; }
+        .modal-content .concept-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; }
+        .modal-content .concept-item strong { display: block; font-size: 17px; margin-bottom: 4px; color: var(--accent); }
+        .modal-content .concept-item span { font-size: 16px; color: var(--text-secondary); line-height: 1.6; }
+        .modal-content .thinker-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin: 14px 0; }
+        .modal-content .thinker-card h4 { margin-top: 0; color: var(--accent); }
+        .modal-content .thinker-card .dates { font-size: 14px; color: var(--text-tertiary); margin-bottom: 8px; }
+        .modal-content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+        .modal-content th { background: var(--bg-secondary); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); border-bottom: 2px solid var(--border); }
+        .modal-content td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 16px; }
+        .modal-content td:first-child { font-weight: 600; font-size: 14px; color: var(--text-secondary); background: var(--bg-secondary); width: 28%; }
+
+        /* ═══ PAGE OVERLAY ═══ */
+        .page-overlay { display: none; position: fixed; inset: 0; z-index: 400; background: var(--bg-primary); overflow-y: auto; opacity: 0; transition: opacity 0.3s ease; }
+        .page-overlay.active { display: block; opacity: 1; }
+        .page-topbar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; background: rgba(250, 249, 245, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+        .page-topbar-left { display: flex; align-items: center; gap: 12px; }
+        .btn-back { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit; font-size: 13px; font-weight: 500; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; text-decoration: none; }
+        .btn-back:hover { border-color: var(--border-hover); color: var(--text-primary); background: var(--bg-secondary); }
+        .btn-back svg { width: 16px; height: 16px; }
+        .page-content { max-width: 1000px; margin: 0 auto; padding: 40px 24px 60px; }
+        .page-content h2 { font-family: 'Instrument Serif', serif; font-size: 36px; font-weight: 400; margin-bottom: 24px; line-height: 1.2; }
+        .page-content h3 { font-family: 'Instrument Serif', serif; font-size: 26px; font-weight: 400; margin: 32px 0 14px; color: var(--text-primary); }
+        .page-content h4 { font-size: 19px; font-weight: 600; margin: 24px 0 10px; }
+        .page-content p { margin-bottom: 14px; font-size: 19px; line-height: 1.8; }
+        .page-content ul, .page-content ol { margin: 10px 0 18px 22px; font-size: 19px; line-height: 1.8; }
+        .page-content li { margin-bottom: 6px; }
+        .page-content .highlight-box { background: var(--accent-light); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 18px 0; }
+        .page-content .highlight-box.blue  { background: var(--blue-light);  border-left-color: var(--blue-accent); }
+        .page-content .highlight-box.green { background: var(--green-light); border-left-color: var(--green-accent); }
+        .page-content .highlight-box.teal  { background: var(--teal-light);  border-left-color: var(--teal-accent); }
+        .page-content .highlight-box.purple{ background: var(--purple-light);border-left-color: var(--purple-accent); }
+        .page-content .quote-box { background: var(--gold-light); border-left: 3px solid var(--gold-accent); padding: 16px 20px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 18px 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 20px; line-height: 1.6; }
+        .page-content .quote-box cite { display: block; font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 14px; color: var(--text-tertiary); margin-top: 8px; }
+        .page-content .thinker-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin: 14px 0; }
+        .page-content .thinker-card h4 { margin-top: 0; color: var(--accent); }
+        .page-content .thinker-card .dates { font-size: 14px; color: var(--text-tertiary); margin-bottom: 8px; }
+        .page-content .concept-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 16px 0 20px; }
+        .page-content .concept-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; }
+        .page-content .concept-item strong { display: block; font-size: 17px; margin-bottom: 4px; color: var(--accent); }
+        .page-content .concept-item span { font-size: 16px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* ═══ FORO ═══ */
+        .foro-section { max-width: 1200px; margin: 0 auto 48px; padding: 0 24px; }
+        .foro-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+        .foro-card-image { flex-shrink: 0; width: 180px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border-radius: var(--radius); }
+        .foro-card-text { flex: 1; min-width: 260px; }
+        .foro-card-text h3 { font-family: 'Instrument Serif', serif; font-size: 24px; font-weight: 400; margin-bottom: 10px; }
+        .foro-card-text p { font-size: 17px; color: var(--text-secondary); margin-bottom: 16px; }
+        .step-list { list-style: none; margin: 0 0 20px 0; }
+        .step-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; font-size: 16px; color: var(--text-secondary); }
+        .step-number { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+        .btn-classroom { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #1a73e8; color: #fff; border: none; border-radius: var(--radius-sm); font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+        .btn-classroom:hover { background: #1557b0; transform: translateY(-1px); }
+        .btn-classroom svg { width: 20px; height: 20px; }
+
+        /* ═══ DIVIDER / FOOTER ═══ */
+        .divider { max-width: 1200px; margin: 0 auto 40px; padding: 0 24px; }
+        .divider-line { border: none; border-top: 1px solid var(--border); }
+        .footer { text-align: center; padding: 32px 24px 40px; font-size: 13px; color: var(--text-tertiary); border-top: 1px solid var(--border); }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .footer-phi { font-family: 'Instrument Serif', serif; font-size: 28px; color: var(--accent); opacity: 0.35; margin-bottom: 8px; }
+
+        /* ═══ REVEAL ═══ */
+        .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 640px) {
+            body { font-size: 17px; }
+            .hero { padding: 40px 16px 32px; }
+            .hero h1 { font-size: 28px; }
+            .content { padding: 0 16px 40px; }
+            .modal-content { padding: 24px 18px; }
+            .modal-content p, .modal-content ul, .modal-content ol { font-size: 17px; }
+            .page-content { padding: 28px 16px 48px; }
+            .page-content p, .page-content ul, .page-content ol { font-size: 17px; }
+            .foro-card { padding: 24px; flex-direction: column; align-items: flex-start; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .topbar { padding: 10px 16px; }
+            .topbar-section { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+    <div class="topbar-left">
+        <span class="topbar-logo">φ</span>
+        <div class="topbar-divider"></div>
+        <span class="topbar-section">Historia de la Filosofía · 2º Bachillerato</span>
+    </div>
+    <a class="btn-home" href="https://pacofilo.github.io/filoalquipir/" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Página principal
+    </a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <span class="hero-overline">Siglo XX · Filosofía analítica</span>
+    <h1>Los problemas filosóficos<br>a la luz del <em>análisis del lenguaje</em>:<br><em>Ludwig Wittgenstein</em></h1>
+    <p class="hero-subtitle">Del <em>Tractatus</em> a las <em>Investigaciones filosóficas</em>: cómo el lenguaje construye los límites de nuestro mundo, crea pseudoproblemas filosóficos y puede ser analizado para liberarnos de sus trampas.</p>
+    <div class="hero-meta">
+        <span>📚 Historia de la Filosofía</span>
+        <span>🎓 2º Bachillerato</span>
+        <span>🏫 IES Alquipir · Cehegín</span>
+    </div>
+</section>
+
+<!-- INTRO QUOTE -->
+<div class="intro-quote reveal">
+    «Los límites de mi lenguaje son los límites de mi mundo.»
+    <cite>— Ludwig Wittgenstein, <em>Tractatus Logico-Philosophicus</em>, proposición 5.6 (1921)</cite>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+    <!-- SECTION 01 -->
+    <div class="section-block reveal">
+        <div class="section-block-header">
+            <div class="section-number">01</div>
+            <div class="section-label">
+                <span class="overline">Contexto y punto de partida</span>
+                <h2>El giro lingüístico en filosofía</h2>
+            </div>
+        </div>
+        <div class="text-content">
+            <p>A comienzos del siglo XX, la filosofía occidental experimenta una transformación radical en su manera de entender sus propios problemas. En lugar de preguntarse directamente por la realidad, la mente o Dios, los filósofos empiezan a preguntarse por el <strong>lenguaje</strong> con el que formulamos esas preguntas. Este «giro lingüístico» da lugar a la filosofía analítica y culmina en la obra de Wittgenstein. Pulsa en cada tarjeta para comprender el contexto:</p>
+        </div>
+    </div>
+
+    <div class="cards-grid">
+        <button class="card-btn blue reveal" onclick="openModal('modal-contexto')">
+            <span class="card-icon">🌍</span>
+            <span class="card-title">El contexto histórico e intelectual</span>
+            <span class="card-desc">La Viena de fin de siglo, la crisis de los fundamentos de la matemática y el nacimiento de la lógica moderna como detonantes del giro lingüístico.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn gold reveal" onclick="openModal('modal-vida')">
+            <span class="card-icon">📜</span>
+            <span class="card-title">Vida y obra de Wittgenstein</span>
+            <span class="card-desc">De Viena a Cambridge: la extraordinaria y paradójica biografía de un filósofo que escribió solo dos libros y cambió la filosofía dos veces.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn green reveal" onclick="openModal('modal-analitica')">
+            <span class="card-icon">🔬</span>
+            <span class="card-title">La filosofía analítica</span>
+            <span class="card-desc">Frege, Russell, Moore y el Círculo de Viena: los fundadores del movimiento que hizo del lenguaje el objeto central de la reflexión filosófica.</span>
+            <span class="card-arrow">→</span>
+        </button>
+    </div>
+
+    <!-- SECTION 02 -->
+    <div class="section-block reveal">
+        <div class="section-block-header">
+            <div class="section-number">02</div>
+            <div class="section-label">
+                <span class="overline">Las dos filosofías de Wittgenstein</span>
+                <h2>El primer y el segundo Wittgenstein</h2>
+            </div>
+        </div>
+        <div class="text-content">
+            <p>Wittgenstein es el único filósofo del siglo XX que produjo dos filosofías radicalmente distintas, cada una de las cuales influyó de manera decisiva en su época. En ambas el lenguaje ocupa el centro, pero las respuestas son opuestas. Explora las dos etapas y el giro que las separa:</p>
+        </div>
+    </div>
+
+    <div class="cards-grid">
+        <button class="card-btn accent reveal" onclick="openPage('page-tractatus')">
+            <span class="card-icon">📗</span>
+            <span class="card-title">El Tractatus: la figura del mundo</span>
+            <span class="card-desc">La teoría pictórica del lenguaje, los hechos atómicos, los límites de lo decible y el silencio sobre lo que solo puede mostrarse.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn teal reveal" onclick="openModal('modal-giro')">
+            <span class="card-icon">🔄</span>
+            <span class="card-title">El giro: de un Wittgenstein al otro</span>
+            <span class="card-desc">La autocrítica del propio Wittgenstein, los problemas insolubles del Tractatus y el abandono de la filosofía que hacen posible el segundo período.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn purple reveal" onclick="openPage('page-investigaciones')">
+            <span class="card-icon">📘</span>
+            <span class="card-title">Las Investigaciones: juegos de lenguaje</span>
+            <span class="card-desc">El significado como uso, los juegos de lenguaje, los parecidos de familia, la crítica del lenguaje privado y el seguir una regla.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn green reveal" onclick="openPage('page-terapia')">
+            <span class="card-icon">🧩</span>
+            <span class="card-title">La filosofía como terapia</span>
+            <span class="card-desc">Los problemas filosóficos como enfermedades del lenguaje. El método terapéutico y la disolución —no resolución— de los pseudoproblemas.</span>
+            <span class="card-arrow">→</span>
+        </button>
+    </div>
+
+    <!-- SECTION 03 -->
+    <div class="section-block reveal">
+        <div class="section-block-header">
+            <div class="section-number">03</div>
+            <div class="section-label">
+                <span class="overline">Para repasar y debatir</span>
+                <h2>Conceptos, legado y actualidad</h2>
+            </div>
+        </div>
+        <div class="text-content">
+            <p>Antes de participar en el foro, consolida el vocabulario wittgensteiniano y reflexiona sobre la vigencia del giro lingüístico en el pensamiento contemporáneo:</p>
+        </div>
+    </div>
+
+    <div class="cards-grid">
+        <button class="card-btn blue reveal" onclick="openModal('modal-glosario')">
+            <span class="card-icon">📖</span>
+            <span class="card-title">Glosario analítico</span>
+            <span class="card-desc">Definiciones de los conceptos esenciales: juego de lenguaje, forma de vida, figura, átomo lógico, parecido de familia, uso y más.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn purple reveal" onclick="openModal('modal-legado')">
+            <span class="card-icon">🌐</span>
+            <span class="card-title">Legado y filosofía analítica hoy</span>
+            <span class="card-desc">La influencia de Wittgenstein en la filosofía de la mente, la ética, la filosofía del lenguaje y las ciencias cognitivas del siglo XXI.</span>
+            <span class="card-arrow">→</span>
+        </button>
+
+        <button class="card-btn accent reveal" onclick="openModal('modal-preguntas')">
+            <span class="card-icon">❓</span>
+            <span class="card-title">Preguntas para el foro</span>
+            <span class="card-desc">Cuestiones de reflexión filosófica para orientar tu participación en el debate de Kialo Edu.</span>
+            <span class="card-arrow">→</span>
+        </button>
+    </div>
+
+</div>
+
+<div class="divider"><hr class="divider-line"></div>
+
+<!-- FORO -->
+<div class="foro-section reveal">
+    <div class="foro-card">
+        <div class="foro-card-image">
+            <svg width="180" height="48" viewBox="0 0 180 48" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <path d="M12 24 Q12 14 22 10" stroke="#4A9EDB" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M12 24 Q12 17 20 14" stroke="#4A9EDB" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M12 24 Q12 20 18 18" stroke="#4A9EDB" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M12 24 L16 22" stroke="#4A9EDB" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <circle cx="12" cy="24" r="3" fill="#4A9EDB"/>
+                    <text x="32" y="30" font-family="'DM Sans', sans-serif" font-size="24" font-weight="700" fill="#2D2B28">kialo</text>
+                    <text x="105" y="30" font-family="'DM Sans', sans-serif" font-size="24" font-weight="400" fill="#6B6560">edu</text>
+                </g>
+            </svg>
+        </div>
+        <div class="foro-card-text">
+            <h3>Participa en el foro de debate</h3>
+            <p>Tras revisar los contenidos de esta página, participarás en un foro de discusión en <strong>Kialo Edu</strong> sobre si el análisis del lenguaje resuelve, disuelve o simplemente esquiva los grandes problemas filosóficos.</p>
+            <ul class="step-list">
+                <li><span class="step-number">1</span><span>Lee atentamente todos los contenidos de esta web.</span></li>
+                <li><span class="step-number">2</span><span>Entra en <strong>Google Classroom</strong> con tu cuenta del centro.</span></li>
+                <li><span class="step-number">3</span><span>En Classroom encontrarás el <strong>enlace al foro de Kialo Edu</strong> para participar en el debate.</span></li>
+            </ul>
+            <a class="btn-classroom" href="https://classroom.google.com" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                Ir a Google Classroom
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="divider"><hr class="divider-line"></div>
+<footer class="footer">
+    <div class="footer-phi">φ</div>
+    <p>Departamento de Filosofía · <a href="https://pacofilo.github.io/filoalquipir/" target="_blank">IES Alquipir</a> · Cehegín, Murcia<br>Francisco Jiménez Amor</p>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     MODALS
+═══════════════════════════════════════════════════════════════════ -->
+
+<!-- MODAL: Contexto histórico e intelectual -->
+<div class="modal-overlay" id="modal-contexto">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">El contexto histórico e intelectual</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+                <button class="btn-modal-action" onclick="closeModal('modal-contexto')" title="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>La Viena de fin de siglo y la crisis de los fundamentos</h3>
+
+            <h4>La Viena fin-de-siècle: un caldo de cultivo único</h4>
+            <p>Wittgenstein nace en 1889 en Viena, la capital del Imperio austrohúngaro, una ciudad que en el cambio de siglo concentra una densidad intelectual y artística extraordinaria. En el mismo espacio temporal conviven Freud y el psicoanálisis, Mahler y Schoenberg en la música, Klimt y Schiele en la pintura, Loos y Wagner en la arquitectura, Mach y Boltzmann en la física y la filosofía de la ciencia. Es un ambiente de crisis y renovación radical: las viejas certezas se derrumban y todo debe rehacerse desde sus fundamentos.</p>
+            <p>En ese entorno, la familia Wittgenstein es una de las más ricas y cultas de Europa. Karl Wittgenstein, padre de Ludwig, es un magnate del acero. En el palacio familiar se celebran conciertos con Brahms y Mahler como invitados. Ludwig crece rodeado de arte, ingeniería y una exigencia intelectual absoluta que marcará su carácter obsesivo y perfeccionista.</p>
+
+            <h4>La crisis de los fundamentos de la matemática</h4>
+            <p>El detonante intelectual inmediato de la filosofía analítica es una crisis interna a las propias matemáticas. A finales del siglo XIX, el matemático alemán <strong>Gottlob Frege</strong> intenta demostrar que las matemáticas pueden reducirse completamente a la lógica (logicismo). Para ello desarrolla la primera lógica formal moderna: un sistema de símbolos y reglas que permite razonar con absoluta precisión, sin las ambigüedades del lenguaje natural.</p>
+            <p>En 1902, <strong>Bertrand Russell</strong> envía a Frege una carta informándole de que su sistema contiene una contradicción fundamental —la «paradoja de Russell»—: el conjunto de todos los conjuntos que no se contienen a sí mismos, ¿se contiene a sí mismo o no? Si sí, entonces no; si no, entonces sí. Esta paradoja sacude los fundamentos de la lógica y la matemática y abre el camino a nuevas investigaciones sobre los lenguajes formales.</p>
+
+            <h4>El giro lingüístico</h4>
+            <p>La gran transformación que inaugura la filosofía analítica es la convicción de que la mayoría de los problemas filosóficos tradicionales —la naturaleza del alma, la existencia de Dios, la libertad, la verdad— son en realidad <strong>problemas sobre el lenguaje</strong>. Surgirían de usar palabras de manera confusa, de preguntar cosas sin sentido o de trasladar formas gramaticales a ámbitos donde no funcionan. Si analizamos con rigor el lenguaje con el que formulamos esas preguntas, veremos que muchos de esos «problemas» se disuelven.</p>
+
+            <div class="highlight-box">
+                <strong>Idea central:</strong> El giro lingüístico no es la tesis de que «todo es lenguaje» ni que la realidad no existe. Es la tesis metodológica de que el análisis del lenguaje es el método filosófico más fiable para clarificar —y en muchos casos disolver— los problemas filosóficos tradicionales.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Vida y obra -->
+<div class="modal-overlay" id="modal-vida">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">Vida y obra de Wittgenstein</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+                <button class="btn-modal-action" onclick="closeModal('modal-vida')" title="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>Ludwig Wittgenstein: una vida al límite</h3>
+
+            <div class="thinker-card">
+                <h4>Ludwig Wittgenstein (1889–1951)</h4>
+                <p class="dates">Viena, Austria · Cambridge, Inglaterra</p>
+                <p>Filósofo austríaco-británico, considerado uno de los pensadores más importantes e influyentes del siglo XX. Única figura de la historia de la filosofía que produjo dos sistemas filosóficos originales, mutuamente críticos, en la misma disciplina. Publicó en vida solo un libro completo: el <em>Tractatus</em>.</p>
+            </div>
+
+            <h4>Formación: de la ingeniería a la filosofía (1889–1911)</h4>
+            <p>Estudia ingeniería aeronáutica en Manchester, fascinado por los motores a reacción. Pero leyendo los <em>Principios de las matemáticas</em> de Russell descubre la filosofía de la lógica y queda atrapado. En 1911 se presenta sin previo aviso en Cambridge ante Russell y le convence en pocas semanas de que es un genio filosófico. Russell dirá más tarde que Wittgenstein representaba «la más perfecta encarnación del ideal filosófico».</p>
+
+            <h4>La Primera Guerra Mundial y el Tractatus (1914–1921)</h4>
+            <p>Al estallar la guerra, Wittgenstein se alista voluntario en el ejército austro-húngaro. Combate en el frente ruso y el italiano, acumula varias condecoraciones por valor en combate, y escribe el <em>Tractatus Logico-Philosophicus</em> en cuadernos de campaña. Hecho prisionero en Italia en 1918, termina el manuscrito en el campo de prisioneros. Publicado en 1921, cree haber resuelto todos los problemas filosóficos y abandona la filosofía.</p>
+
+            <h4>El paréntesis: maestro de escuela y arquitecto (1921–1929)</h4>
+            <p>Convencido de haber dicho la última palabra en filosofía, regala su parte de la herencia familiar —una de las mayores fortunas de Europa— a sus hermanos y se convierte en maestro de escuela primaria en aldeas remotas de Austria. La experiencia es desastrosa: su exigencia perfeccionista e impaciencia resultan incompatibles con niños rurales. Después diseña y construye en Viena una casa para su hermana, ejerciendo de arquitecto con la misma obsesión por los detalles que luego caracterizará su filosofía.</p>
+
+            <h4>El retorno a Cambridge y el segundo período (1929–1951)</h4>
+            <p>Conversaciones con matemáticos del Círculo de Viena le revelan que el <em>Tractatus</em> tiene problemas graves. Vuelve a Cambridge en 1929, presenta el <em>Tractatus</em> como tesis doctoral —Russell y Moore son sus evaluadores— y comienza a desarrollar una filosofía radicalmente nueva. Ocupa la cátedra de Moore (1939-1947). Durante la Segunda Guerra Mundial trabaja como auxiliar de hospital en Londres y Newcastle, rechazando conscientemente el cómodo aislamiento académico. Muere de cáncer en Cambridge en 1951. Sus últimas palabras, según testimonio de quienes le rodeaban: «Diles que he tenido una vida maravillosa.»</p>
+
+            <h4>Obras fundamentales</h4>
+            <table>
+                <thead><tr><th>Obra</th><th>Año</th><th>Contenido central</th></tr></thead>
+                <tbody>
+                    <tr><td>Tractatus Logico-Philosophicus</td><td>1921</td><td>Teoría pictórica del lenguaje. Los límites del mundo y el silencio.</td></tr>
+                    <tr><td>Cuadernos Azul y Marrón</td><td>1933–35</td><td>Dictados a alumnos. Transición hacia el segundo período.</td></tr>
+                    <tr><td>Investigaciones filosóficas</td><td>1953 †</td><td>Juegos de lenguaje, uso, gramática, lenguaje privado. Obra maestra póstuma.</td></tr>
+                    <tr><td>Sobre la certeza</td><td>1969 †</td><td>El conocimiento, la duda y los fundamentos. Escritos del último año de vida.</td></tr>
+                </tbody>
+            </table>
+            <p style="font-size:14px; color: var(--text-tertiary); margin-top:4px;">† Publicación póstuma.</p>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: La filosofía analítica -->
+<div class="modal-overlay" id="modal-analitica">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">La filosofía analítica</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+                <button class="btn-modal-action" onclick="closeModal('modal-analitica')" title="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>La filosofía analítica: orígenes y figuras</h3>
+            <p>La <strong>filosofía analítica</strong> es la corriente filosófica dominante en el mundo anglosajón desde comienzos del siglo XX. No es una doctrina sino un <em>estilo</em> y un <em>método</em>: el análisis riguroso del lenguaje, la atención al argumento preciso y el uso de la lógica formal como herramienta filosófica. Sus fundadores son Frege, Russell y Moore; Wittgenstein es su figura más influyente y más singular.</p>
+
+            <div class="thinker-card">
+                <h4>Gottlob Frege (1848–1925)</h4>
+                <p class="dates">Wismar, Alemania</p>
+                <p>Matemático y lógico. Inventor de la lógica formal moderna (cuantificadores, variables, funciones proposicionales). Distingue entre <strong>sentido</strong> (<em>Sinn</em>) y <strong>referencia</strong> (<em>Bedeutung</em>): la «estrella matutina» y la «estrella vespertina» tienen la misma referencia (Venus) pero distinto sentido. Fundamento de toda la filosofía del lenguaje posterior.</p>
+            </div>
+
+            <div class="thinker-card">
+                <h4>Bertrand Russell (1872–1970)</h4>
+                <p class="dates">Trellech, Gales</p>
+                <p>Con Moore, fundador de la filosofía analítica en Cambridge. Desarrolla el <strong>atomismo lógico</strong>: la realidad está compuesta de «hechos atómicos» a los que corresponden «proposiciones atómicas». Su <strong>teoría de las descripciones</strong> muestra cómo expresiones aparentemente referenciales («el actual rey de Francia») pueden analizarse lógicamente sin comprometerse con la existencia de su referente.</p>
+            </div>
+
+            <div class="thinker-card">
+                <h4>El Círculo de Viena (1920s–1930s)</h4>
+                <p class="dates">Viena, Austria</p>
+                <p>Grupo de filósofos y científicos (Schlick, Carnap, Neurath) que desarrollan el <strong>positivismo lógico</strong> inspirándose en el <em>Tractatus</em>. Su tesis central: el <strong>principio de verificación</strong>, según el cual una proposición solo tiene sentido si es verificable empíricamente o es una verdad lógica. Las proposiciones metafísicas («Dios existe», «el alma es inmortal») son literalmente sin sentido: ni verdaderas ni falsas, simplemente vacías de contenido cognitivo.</p>
+            </div>
+
+            <div class="thinker-card">
+                <h4>La filosofía del lenguaje ordinario (Oxford, 1940s–60s)</h4>
+                <p class="dates">Oxford, Inglaterra</p>
+                <p>Influida por el segundo Wittgenstein, esta corriente (Ryle, Austin, Strawson) sostiene que los problemas filosóficos surgen de ignorar el funcionamiento real del lenguaje ordinario. <strong>J. L. Austin</strong> desarrolla la teoría de los actos de habla: hablar no es solo describir el mundo, sino también <em>hacer</em> cosas (prometer, ordenar, bautizar, declarar). <strong>Gilbert Ryle</strong> analiza el «error de categoría» como fuente de confusiones filosóficas.</p>
+            </div>
+
+            <div class="highlight-box teal">
+                <strong>Lo que une a todos:</strong> La convicción de que la precisión en el análisis del lenguaje —ya sea del lenguaje lógico formal o del lenguaje natural ordinario— es la condición de posibilidad de cualquier progreso filosófico genuino.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: El giro -->
+<div class="modal-overlay" id="modal-giro">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">El giro: de un Wittgenstein al otro</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+                <button class="btn-modal-action" onclick="closeModal('modal-giro')" title="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>La autocrítica más radical de la historia de la filosofía</h3>
+            <p>Pocos filósofos en la historia han desmontado su propia obra con la misma energía y rigor con que Wittgenstein destruye el <em>Tractatus</em> en las <em>Investigaciones filosóficas</em>. El giro no es un pequeño retoque: es una inversión completa del método y de la concepción del lenguaje.</p>
+
+            <h4>¿Qué falla en el Tractatus?</h4>
+            <p>El <em>Tractatus</em> parte de la idea de que el lenguaje tiene una <strong>esencia oculta</strong>: una estructura lógica profunda que «representa» la realidad como una figura representa un hecho. La tarea de la filosofía es revelar esa estructura. Pero Wittgenstein llega a ver que esta imagen del lenguaje es una <em>idealización</em> que no corresponde a cómo funciona realmente el lenguaje en la vida humana.</p>
+            <p>El detonante histórico fue una conversación con el economista italiano Piero Sraffa en Cambridge. Cuando Wittgenstein insistía en que las proposiciones debían tener la misma «forma lógica» que los hechos que representan, Sraffa hizo un gesto obsceno con el dedo —un gesto napolitano de desprecio— y preguntó: «¿Cuál es la forma lógica de <em>esto</em>?» Wittgenstein no supo qué responder, y reconoció que había algo en el lenguaje que se le escapaba completamente.</p>
+
+            <h4>Las tres grandes diferencias</h4>
+            <table>
+                <thead><tr><th>Dimensión</th><th>Primer Wittgenstein</th><th>Segundo Wittgenstein</th></tr></thead>
+                <tbody>
+                    <tr><td>Lenguaje ideal</td><td>El lenguaje tiene una esencia lógica única y oculta</td><td>El lenguaje es una familia de prácticas diversas sin esencia común</td></tr>
+                    <tr><td>Significado</td><td>Significar = representar un hecho</td><td>Significar = ser usado de determinada manera en una práctica</td></tr>
+                    <tr><td>Filosofía</td><td>Análisis lógico que revela la estructura del lenguaje</td><td>Terapia que disuelve los problemas surgidos del mal uso del lenguaje</td></tr>
+                    <tr><td>Método</td><td>Construcción de un lenguaje lógicamente perfecto</td><td>Descripción del uso real del lenguaje ordinario</td></tr>
+                    <tr><td>Meta</td><td>Trazar los límites de lo decible</td><td>Devolver a las palabras su hogar en el uso cotidiano</td></tr>
+                </tbody>
+            </table>
+
+            <h4>Lo que permanece</h4>
+            <p>A pesar de la ruptura, hay una continuidad profunda: en ambos períodos, Wittgenstein está convencido de que los problemas filosóficos son problemas sobre el lenguaje. Lo que cambia es su diagnóstico: en el <em>Tractatus</em>, el lenguaje ordinario oculta la estructura lógica verdadera; en las <em>Investigaciones</em>, es la filosofía la que toma al lenguaje fuera de su contexto y genera confusión.</p>
+
+            <div class="highlight-box blue">
+                <strong>Una metáfora del propio Wittgenstein:</strong> En el Tractatus, el filósofo es como un cartógrafo que traza el mapa exacto del territorio del lenguaje y el mundo. En las Investigaciones, el filósofo es como un médico que trata enfermedades causadas por tomar palabras fuera de su contexto natural de uso.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Glosario -->
+<div class="modal-overlay" id="modal-glosario">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">Glosario analítico</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+                <button class="btn-modal-action" onclick="closeModal('modal-glosario')" title="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>Conceptos fundamentales de Wittgenstein y la filosofía analítica</h3>
+            <div class="concept-grid">
+                <div class="concept-item">
+                    <strong>Teoría pictórica</strong>
+                    <span>Las proposiciones son figuras (<em>Bilder</em>) de los hechos: tienen la misma forma lógica que aquello que representan. Es la tesis central del <em>Tractatus</em>.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Hecho atómico</strong>
+                    <span>La combinación más simple de objetos en el mundo. Los hechos atómicos son los ladrillos de la realidad en el <em>Tractatus</em>.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Lo decible / lo inefable</strong>
+                    <span>Solo se puede decir con sentido lo que puede ser verdadero o falso (los hechos). La ética, la estética, lo místico solo pueden «mostrarse», no decirse.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Juego de lenguaje</strong>
+                    <span>(<em>Sprachspiel</em>) Prácticas lingüísticas entretejidas con actividades vitales. No hay un solo lenguaje sino innumerables juegos con distintas reglas.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Significado como uso</strong>
+                    <span>El significado de una palabra no es una imagen mental ni un objeto: es su <em>uso</em> en el lenguaje. «No preguntes por el significado, pregunta por el uso.»</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Forma de vida</strong>
+                    <span>(<em>Lebensform</em>) El trasfondo de prácticas, hábitos y actividades humanas que da sentido a los juegos de lenguaje. El lenguaje está incrustado en la vida.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Parecidos de familia</strong>
+                    <span>Los miembros de una misma categoría (como «juego») no comparten una esencia común, sino una red de semejanzas solapadas, como los rasgos de una familia.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Seguir una regla</strong>
+                    <span>No puede explicarse en términos puramente mentales o causales. Seguir una regla es una práctica social: está anclada en una forma de vida compartida.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Lenguaje privado</strong>
+                    <span>La tesis que Wittgenstein refuta: que es posible un lenguaje que solo su hablante pueda entender porque se refiere a sensaciones privadas. No puede existir tal lenguaje.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Gramática filosófica</strong>
+                    <span>Las reglas profundas del uso de las expresiones lingüísticas. Los errores filosóficos son «accidentes gramaticales»: se producen cuando usamos palabras fuera de su gramática.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Terapia filosófica</strong>
+                    <span>El método del segundo Wittgenstein: no resolver los problemas filosóficos, sino mostrar que son pseudoproblemas generados por confusiones lingüísticas, y disolverlos.</span>
+                </div>
+                <div class="concept-item">
+                    <strong>Mosca en la botella</strong>
+                    <span>Metáfora de la filosofía como terapia: el filósofo es una mosca atrapada en una botella por las trampas del lenguaje. La tarea es mostrarle la salida.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Legado -->
+<div class="modal-overlay" id="modal-legado">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">Legado y filosofía analítica hoy</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+                <button class="btn-modal-action" onclick="closeModal('modal-legado')" title="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>La influencia de Wittgenstein y la filosofía analítica contemporánea</h3>
+
+            <h4>Una influencia sin fronteras disciplinares</h4>
+            <p>La influencia de Wittgenstein trasciende con mucho los límites de la filosofía académica. Sus ideas sobre el lenguaje, el significado, las reglas y las prácticas han impactado en la lingüística, la antropología, la psicología cognitiva, la inteligencia artificial, la teoría literaria y las ciencias sociales. Es difícil encontrar otra figura del siglo XX cuyo pensamiento haya penetrado en tantos campos distintos.</p>
+
+            <h4>La filosofía de la mente y el problema de la conciencia</h4>
+            <p>El argumento del lenguaje privado tiene consecuencias directas para uno de los problemas más debatidos de la filosofía contemporánea: el <strong>problema de la conciencia</strong>. Si no puede haber un lenguaje que solo se refiera a experiencias internas privadas, entonces nuestra comprensión de los estados mentales es esencialmente pública y social. Esto pone en cuestión toda una tradición que concibe la mente como un «teatro interior» al que solo tiene acceso privilegiado su poseedor.</p>
+            <p>Filósofos como <strong>Gilbert Ryle</strong> (<em>El concepto de lo mental</em>, 1949) y <strong>Donald Davidson</strong> desarrollan concepciones del lenguaje mental que deben mucho a Wittgenstein. Más recientemente, <strong>Daniel Dennett</strong> y <strong>John Searle</strong> —aunque en posiciones muy distintas— dialogan explícitamente con el legado wittgensteiniano.</p>
+
+            <h4>La inteligencia artificial y el seguir una regla</h4>
+            <p>La discusión de Wittgenstein sobre el seguir una regla ha adquirido una relevancia inesperada en el debate sobre la inteligencia artificial. ¿Puede una máquina «seguir una regla» en el sentido pleno del término? ¿O simplemente imita el comportamiento externo de quien sigue una regla sin comprenderla realmente? El filósofo <strong>Hubert Dreyfus</strong> usó argumentos de raíz wittgensteiniana para criticar las pretensiones de la IA simbólica ya en los años 1970, argumentos que siguen siendo pertinentes en el debate sobre los grandes modelos de lenguaje actuales.</p>
+
+            <h4>La ética y la estética wittgensteinianas</h4>
+            <p>Aunque Wittgenstein dijo muy poco explícitamente sobre ética —concluyó que la ética estaba más allá de lo que puede decirse con sentido—, sus ideas han inspirado corrientes éticas importantes. La idea de que los juicios morales están incrustados en formas de vida específicas, y que la comprensión moral requiere participar en esas prácticas, ha influido en la <strong>ética de las virtudes</strong> contemporánea (MacIntyre, Anscombe) y en el <strong>comunitarismo</strong> político.</p>
+
+            <div class="highlight-box green">
+                <strong>Paradoja final:</strong> Wittgenstein es el filósofo que más insistió en que la filosofía no debe producir tesis sino disolver problemas, y sin embargo generó una de las obras más estudiadas, comentadas e influyentes de toda la historia de la filosofía. Su método terapéutico se ha convertido él mismo en objeto de admiración y controversia filosófica interminable.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Preguntas para el foro -->
+<div class="modal-overlay" id="modal-preguntas">
+    <div class="modal-box">
+        <div class="modal-topbar">
+            <span class="modal-topbar-title">Preguntas para el foro</span>
+            <div class="modal-topbar-actions">
+                <button class="btn-modal-action" onclick="toggleFullscreen(this)" title="Pantalla completa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+                <button class="btn-modal-action" onclick="closeModal('modal-preguntas')" title="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <h3>Cuestiones para orientar el debate en Kialo Edu</h3>
+            <p>El foro girará en torno a la pregunta central: <strong>¿Resuelve, disuelve o esquiva el análisis del lenguaje los grandes problemas filosóficos?</strong> Reflexiona sobre estas cuestiones:</p>
+
+            <h4>Sobre el lenguaje y el mundo</h4>
+            <ul>
+                <li>¿Estás de acuerdo con Wittgenstein en que «los límites de mi lenguaje son los límites de mi mundo»? ¿Significa esto que quien habla más idiomas tiene «más mundo»? ¿O que hay experiencias que ningún lenguaje puede capturar?</li>
+                <li>¿Puede el lenguaje expresar todo lo que existe o sentimos? Piensa en experiencias musicales, emociones muy intensas, dolor físico... ¿hay algo «inefable»?</li>
+            </ul>
+
+            <h4>Sobre los problemas filosóficos</h4>
+            <ul>
+                <li>Wittgenstein dice que los problemas filosóficos (¿qué es el tiempo?, ¿qué es la consciencia?, ¿existe el libre albedrío?) son en realidad confusiones lingüísticas. ¿Te parece convincente esta tesis o crees que estos problemas son genuinos?</li>
+                <li>¿Es satisfactorio «disolver» un problema filosófico mostrando que es un sinsentido, o eso equivale a evitarlo? ¿En qué se diferencia disolver un problema de resolverlo?</li>
+            </ul>
+
+            <h4>Sobre los juegos de lenguaje y la cultura</h4>
+            <ul>
+                <li>Si el significado de las palabras depende de su uso en prácticas sociales concretas (formas de vida), ¿significa esto que no hay verdades universales? ¿Conduce el segundo Wittgenstein al relativismo?</li>
+                <li>¿Puede haber genuina comunicación entre personas de culturas o formas de vida muy distintas, si los juegos de lenguaje son diferentes? ¿Cómo lo explicas?</li>
+            </ul>
+
+            <h4>Sobre el lenguaje y las nuevas tecnologías</h4>
+            <ul>
+                <li>¿Crees que un modelo de inteligencia artificial como los actuales «entiende» el lenguaje, o simplemente sigue reglas muy complejas de predicción sin comprensión real? ¿Qué diría Wittgenstein?</li>
+                <li>Las redes sociales han creado nuevos «juegos de lenguaje» (memes, emojis, hashtags). ¿Cómo encajan en la filosofía del segundo Wittgenstein?</li>
+            </ul>
+
+            <div class="highlight-box blue">
+                <strong>Recuerda:</strong> Argumenta con los conceptos que has estudiado (juego de lenguaje, uso, forma de vida, lo decible/inefable) y apoya cada posición con ejemplos concretos de tu experiencia o de la actualidad.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     PAGES
+═══════════════════════════════════════════════════════════════════ -->
+
+<!-- PAGE: El Tractatus -->
+<div class="page-overlay" id="page-tractatus">
+    <div class="page-topbar">
+        <div class="page-topbar-left">
+            <button class="btn-back" onclick="closePage('page-tractatus')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                Volver
+            </button>
+            <span class="modal-topbar-title">El Tractatus: la figura del mundo</span>
+        </div>
+    </div>
+    <div class="page-content">
+        <h2>El Tractatus Logico-Philosophicus</h2>
+        <p>El <em>Tractatus Logico-Philosophicus</em> (1921) es uno de los textos más extraordinarios y enigmáticos de la historia de la filosofía. Escrito en aforismos numerados con precisión matemática, pretende trazar de una vez por todas los límites de lo que puede decirse con sentido. Cuando se llega al límite, la única actitud honesta es el silencio.</p>
+
+        <h3>1. La estructura del mundo: hechos y objetos</h3>
+        <p>El <em>Tractatus</em> comienza con una ontología: una teoría sobre la estructura de la realidad. El mundo no está compuesto de cosas sino de <strong>hechos</strong>: «El mundo es la totalidad de los hechos, no de las cosas» (TLP 1.1). Un hecho es una combinación de objetos en el mundo. Los <strong>objetos</strong> son los elementos últimos, simples e indestructibles de la realidad: no pueden analizarse más, simplemente «están ahí» como las piezas del lego con las que se construye todo.</p>
+        <p>Los hechos más simples —combinaciones directas de objetos— son los <strong>hechos atómicos</strong> (<em>Sachverhalte</em>). El mundo es la totalidad de los hechos atómicos que se dan efectivamente. El espacio lógico —el conjunto de todos los hechos posibles— es más amplio que el mundo real.</p>
+
+        <div class="quote-box">
+            «El mundo es todo lo que acaece. El mundo es la totalidad de los hechos, no de las cosas.»
+            <cite>— Wittgenstein, <em>Tractatus Logico-Philosophicus</em>, 1–1.1</cite>
+        </div>
+
+        <h3>2. La teoría pictórica del lenguaje</h3>
+        <p>La tesis más original del <em>Tractatus</em> es la <strong>teoría pictórica del significado</strong> (<em>Bildtheorie</em>). Una proposición con sentido es una <em>figura</em> (<em>Bild</em>) de un hecho posible: tiene la misma estructura lógica que el hecho que representa. Así como una fotografía o un mapa tienen la misma forma espacial que la realidad que representan, las proposiciones tienen la misma «forma lógica» que los hechos que describen.</p>
+        <p>Para que una proposición tenga sentido, debe poder ser verdadera o falsa: debe describir un estado de cosas que puede o no darse en el mundo. Una proposición verdadera representa un hecho que efectivamente se da; una proposición falsa representa un hecho posible que no se da. Una expresión que no puede ser ni verdadera ni falsa —que no puede representar ningún estado de cosas— carece de sentido.</p>
+
+        <div class="concept-grid">
+            <div class="concept-item">
+                <strong>Proposición atómica</strong>
+                <span>La figura de un hecho atómico. Es el tipo más simple de proposición con sentido. Ejemplo: «La manzana es roja.»</span>
+            </div>
+            <div class="concept-item">
+                <strong>Proposición molecular</strong>
+                <span>Combinación de proposiciones atómicas mediante conectivos lógicos (y, o, si... entonces). Su verdad depende de la de las atómicas.</span>
+            </div>
+            <div class="concept-item">
+                <strong>Tautología</strong>
+                <span>Proposición verdadera en todas las circunstancias posibles (ej.: «llueve o no llueve»). No dice nada sobre el mundo: es un caso límite vacío de información.</span>
+            </div>
+            <div class="concept-item">
+                <strong>Contradicción</strong>
+                <span>Proposición falsa en todas las circunstancias posibles. Tampoco dice nada sobre el mundo: el otro caso límite.</span>
+            </div>
+        </div>
+
+        <h3>3. Los límites del lenguaje: lo decible y lo inefable</h3>
+        <p>La conclusión más perturbadora del <em>Tractatus</em> es que la mayor parte de lo que los filósofos han intentado decir a lo largo de la historia carece de sentido. Las proposiciones de la ética («matar es malo»), la estética («este cuadro es bello»), la metafísica («Dios existe», «el alma es inmortal») y la lógica misma no representan ningún hecho posible: no pueden ser verdaderas ni falsas en ningún mundo posible. Por tanto, <strong>carecen de sentido</strong> como descripciones del mundo.</p>
+        <p>Esto no significa que esas cuestiones sean insignificantes. Wittgenstein introduce una distinción fundamental: entre <strong>decir</strong> (<em>sagen</em>) y <strong>mostrar</strong> (<em>zeigen</em>). Lo que no puede decirse puede sin embargo <em>mostrarse</em>: la forma lógica del mundo se muestra en el lenguaje sin poder ser dicha; los valores éticos y estéticos se muestran en el modo de vivir sin poder ser formulados en proposiciones con sentido.</p>
+
+        <div class="quote-box">
+            «De lo que no se puede hablar, hay que guardar silencio.»
+            <cite>— Wittgenstein, <em>Tractatus Logico-Philosophicus</em>, proposición 7 (última proposición del libro)</cite>
+        </div>
+
+        <h3>4. Lo místico</h3>
+        <p>Paradójicamente, el libro que más radicalmente limita el alcance del lenguaje termina con una apertura hacia algo que escapa a esos límites: «<strong>Lo místico</strong>» (<em>das Mystische</em>). Lo místico no es algo sobrenatural: es el sentimiento de que el mundo existe, de que hay algo en lugar de nada, la contemplación del mundo como totalidad. La ética y la estética son también manifestaciones de lo místico: pertenecen al sujeto que contempla el mundo, no al mundo contemplado.</p>
+        <p>Wittgenstein era, a su manera, un hombre profundamente religioso. La última proposición del <em>Tractatus</em> —«De lo que no se puede hablar, hay que guardar silencio»— no es un invitación al cinismo ni a la superficialidad: es un llamado a la honestidad intelectual ante los límites del lenguaje, y un reconocimiento de que lo más importante de la vida está precisamente más allá de esos límites.</p>
+
+        <div class="highlight-box">
+            <strong>La paradoja del Tractatus:</strong> El libro pretende mostrar los límites del lenguaje con sentido. Pero para hacerlo, tiene que usar proposiciones que —según su propia teoría— carecen de sentido (no representan hechos posibles). La última proposición 6.54 lo reconoce: «Mis proposiciones son elucidaciones de este modo: quien me entiende las reconoce al final como sinsentidos, cuando las ha usado como peldaños para subir más allá de ellas.» El libro es una escalera que hay que arrojar una vez que se ha subido.
+        </div>
+    </div>
+</div>
+
+<!-- PAGE: Las Investigaciones filosóficas -->
+<div class="page-overlay" id="page-investigaciones">
+    <div class="page-topbar">
+        <div class="page-topbar-left">
+            <button class="btn-back" onclick="closePage('page-investigaciones')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                Volver
+            </button>
+            <span class="modal-topbar-title">Las Investigaciones filosóficas</span>
+        </div>
+    </div>
+    <div class="page-content">
+        <h2>Las Investigaciones filosóficas</h2>
+        <p>Las <em>Investigaciones filosóficas</em>, publicadas póstumamente en 1953, son la gran obra del segundo Wittgenstein y una de las cimas del pensamiento filosófico del siglo XX. No tienen la estructura aforística y matemática del <em>Tractatus</em>: son un texto meditativo, en forma de diálogo consigo mismo, que avanza por rodeos, ejemplos, preguntas y correcciones constantes. Su estilo mismo es filosófico: refleja la complejidad y la resistencia del lenguaje a toda sistematización.</p>
+
+        <h3>1. El significado como uso</h3>
+        <p>La tesis fundamental del segundo período invierte la del primero. Ya no se trata de que las palabras <em>representen</em> objetos o hechos. El significado de una palabra es su <strong>uso</strong> en el lenguaje: «Para una gran clase de casos en que se emplea la palabra "significado" —aunque no para todos—, puede explicarse así: el significado de una palabra es su uso en el lenguaje» (IF §43).</p>
+        <p>Esto puede parecer trivial, pero tiene consecuencias radicales. Significa que el significado no está en la mente del hablante (como imagen privada o intención), ni en el mundo (como objeto al que la palabra se refiere), sino en la <em>práctica lingüística pública</em>: en los patrones de uso socialmente establecidos. Para saber qué significa una palabra, no hay que mirar hacia dentro (a la mente) ni hacia fuera (al mundo), sino mirar a cómo la gente la usa en la vida cotidiana.</p>
+
+        <h3>2. Los juegos de lenguaje</h3>
+        <p>Para capturar esta idea del lenguaje como práctica, Wittgenstein introduce su concepto más influyente: los <strong>juegos de lenguaje</strong> (<em>Sprachspiele</em>). La idea es que el lenguaje no es una sola cosa con una esencia única, sino una familia de actividades distintas —tan distintas entre sí como los diferentes juegos: ajedrez, fútbol, parchís, solitario— que comparten algunos rasgos pero no todos.</p>
+        <p>Los juegos de lenguaje incluyen: dar órdenes y obedecerlas; describir objetos; informar de un acontecimiento; hacer conjeturas; inventar una historia; actuar en teatro; cantar canciones de corro; adivinar acertijos; contar chistes; traducir; pedir; agradecer; maldecir; saludar; rezar. Wittgenstein insiste en que esta lista es abierta e interminable.</p>
+
+        <div class="quote-box">
+            «Piensa en las herramientas de una caja de herramientas: hay un martillo, unos alicates, una sierra, un destornillador, una regla, un tarro de pegamento, cola, clavos y tornillos. Las funciones de las palabras son tan diversas como las funciones de estos objetos.»
+            <cite>— Wittgenstein, <em>Investigaciones filosóficas</em>, § 11</cite>
+        </div>
+
+        <h3>3. Los parecidos de familia</h3>
+        <p>Si el lenguaje es una familia de juegos distintos, ¿qué los une? Wittgenstein responde con el concepto de <strong>parecidos de familia</strong> (<em>Familienähnlichkeiten</em>). Los miembros de una familia se parecen unos a otros de maneras distintas y solapadas: A tiene la nariz de B, los ojos de C, el carácter de D, la complexión de A... pero no hay ningún rasgo que compartan todos. Lo mismo ocurre con los juegos: no hay ninguna propiedad que tengan todos y solo los juegos. Son una red de parecidos que se cruzan y solapan.</p>
+        <p>Esta idea tiene consecuencias filosóficas enormes: destruye la búsqueda tradicional de <em>esencias</em>. No existe «la esencia del juego», «la esencia del lenguaje», «la esencia del conocimiento». Lo que existe son prácticas concretas conectadas por parecidos de familia. La filosofía que busca la esencia única y universal de las cosas está, desde este punto de vista, persiguiendo fantasmas gramaticales.</p>
+
+        <h3>4. Seguir una regla</h3>
+        <p>Una de las discusiones más complejas y debatidas de las <em>Investigaciones</em> es la que gira en torno al <strong>seguir una regla</strong>. ¿Qué significa aplicar correctamente una regla matemática, gramatical o moral? Wittgenstein muestra que no puede explicarse en términos puramente mentales: no hay ningún «proceso mental» que garantice que estoy aplicando la regla correctamente en los casos futuros.</p>
+        <p>Imagina que alguien aprende la regla «+2» (suma 2 a cada número). Ha escrito: 2, 4, 6, 8... y sigue la serie correctamente hasta 1000. Pero llega a 1000 y escribe 1004. Cuando le preguntamos, dice que sí está siguiendo la misma regla. ¿Cómo demostramos que está equivocado? No hay ningún estado mental que «contenga» todos los casos futuros de aplicación de la regla. Lo que determina si alguien sigue una regla correctamente es su participación en una <strong>práctica social</strong>: la comunidad de hablantes que comparten un modo de actuar.</p>
+
+        <h3>5. El argumento del lenguaje privado</h3>
+        <p>El argumento más discutido del segundo Wittgenstein es el llamado <strong>argumento contra el lenguaje privado</strong>. La idea que combate es intuitivamente muy plausible: que tenemos acceso privilegiado a nuestros propios estados mentales (dolor, alegría, creencias) y que podríamos en principio crear un «diario» de esas sensaciones privadas usando nombres que solo nosotros entendemos.</p>
+        <p>Wittgenstein objeta: para que una expresión tenga significado, debe existir un <em>criterio de corrección</em>, una manera de distinguir usar la expresión correctamente de usarla incorrectamente. En un lenguaje estrictamente privado, el único criterio disponible sería el recuerdo del hablante. Pero el recuerdo no puede ser el criterio de su propia corrección: sería como comprar varias copias del mismo periódico para confirmar una noticia. Un lenguaje en el que «lo que me parece correcto es correcto» no es en absoluto un lenguaje.</p>
+
+        <div class="thinker-card">
+            <h4>El escarabajo en la caja</h4>
+            <p>Wittgenstein ilustra el argumento con un ejemplo famoso. Imagina que cada persona tiene una caja y llama «escarabajo» a lo que hay dentro. Nadie puede mirar en la caja del otro. ¿Qué papel juega la «caja» en el juego de lenguaje de «escarabajo»? Si cada uno puede tener algo distinto en su caja —o incluso nada—, entonces la caja y su contenido quedan fuera del juego de lenguaje completamente. Lo mismo ocurre con las sensaciones privadas: no son el contenido secreto que las palabras «dolor», «alegría» refieren, sino parte de un juego de lenguaje público y social.</p>
+        </div>
+
+        <div class="highlight-box teal">
+            <strong>Síntesis:</strong> Las <em>Investigaciones filosóficas</em> proponen una imagen del lenguaje radicalmente diferente a la del <em>Tractatus</em>: el lenguaje no es una figura lógica del mundo sino un conjunto de prácticas sociales entretejidas con formas de vida. El significado no se encuentra ni en la mente ni en el mundo, sino en el uso compartido. Esta imagen hace explotar la mayoría de los problemas filosóficos tradicionales, que resultan surgir de usar el lenguaje fuera de su contexto natural.
+        </div>
+    </div>
+</div>
+
+<!-- PAGE: La filosofía como terapia -->
+<div class="page-overlay" id="page-terapia">
+    <div class="page-topbar">
+        <div class="page-topbar-left">
+            <button class="btn-back" onclick="closePage('page-terapia')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                Volver
+            </button>
+            <span class="modal-topbar-title">La filosofía como terapia</span>
+        </div>
+    </div>
+    <div class="page-content">
+        <h2>La filosofía como terapia</h2>
+        <p>La concepción que el segundo Wittgenstein tiene de la filosofía es radicalmente subversiva: la filosofía no tiene que descubrir nuevas verdades ni construir sistemas, sino <strong>curar enfermedades del lenguaje</strong>. Los problemas filosóficos no son preguntas difíciles que esperan una respuesta: son síntomas de que el lenguaje ha sido usado de una manera que genera confusión. La tarea del filósofo es mostrar a la mosca la salida de la botella.</p>
+
+        <h3>1. ¿Cómo surgen los problemas filosóficos?</h3>
+        <p>Los problemas filosóficos surgen, para Wittgenstein, cuando el lenguaje «se va de vacaciones»: cuando tomamos palabras y expresiones que funcionan perfectamente en su contexto ordinario y las trasplantamos a un contexto abstracto donde ya no tienen un uso claro. El resultado son preguntas que parecen profundas pero que en realidad son fruto de una confusión gramatical.</p>
+        <p>Considera el problema filosófico clásico: <strong>«¿Qué es el tiempo?»</strong> San Agustín escribe: «Sé qué es el tiempo mientras nadie me lo pregunta; cuando quiero explicárselo a alguien que me lo pide, no lo sé.» Wittgenstein diría: el problema surge de que preguntamos «¿qué es el tiempo?» como si «tiempo» fuera el nombre de algún objeto misterioso que debemos localizar. Pero en la vida ordinaria usamos perfectamente «tiempo» en incontables contextos («no tengo tiempo», «¿qué hora es?», «hace tiempo que no te veo»...) sin ningún problema. La pregunta filosófica surge de aplicar a «tiempo» el modelo gramatical del sustantivo como nombre de un objeto.</p>
+
+        <div class="quote-box">
+            «Un problema filosófico tiene la forma: "No sé salir del laberinto." La filosofía simplemente pone todo ante nosotros y no explica ni deduce nada. Puesto que todo está abierto a la vista, no hay nada que explicar.»
+            <cite>— Wittgenstein, <em>Investigaciones filosóficas</em>, §§ 123, 126</cite>
+        </div>
+
+        <h3>2. Los «accidentes gramaticales» y los pseudoproblemas</h3>
+        <p>Wittgenstein analiza sistemáticamente cómo nuestra gramática genera ilusiones filosóficas. Algunos de los mecanismos más frecuentes son:</p>
+
+        <div class="thinker-card">
+            <h4>El sustantivo que no nombra nada</h4>
+            <p>Muchos términos filosóficos son sustantivos («alma», «mente», «voluntad», «libertad»), y la gramática del sustantivo lleva a pensar que deben nombrar algún objeto. Buscamos entonces ese objeto misterioso y no lo encontramos: nace el problema filosófico. Pero quizá esos términos no funcionan como nombres de objetos sino como descripciones de patrones de conducta, capacidades o disposiciones.</p>
+        </div>
+
+        <div class="thinker-card">
+            <h4>El error de categoría</h4>
+            <p>Aplicamos a un término la gramática de otra categoría. Decimos «la mente» como si fuera una cosa espacial (¿dónde está?), aunque su gramática real no es la de los objetos espaciales. Gilbert Ryle llama a esto «error de categoría»: preguntar «¿dónde está la mente?» es tan absurdo como, al ver los colegios, los laboratorios y las bibliotecas de una universidad, preguntar «¿y ahora cuándo veo la Universidad?»</p>
+        </div>
+
+        <div class="thinker-card">
+            <h4>La generalización excesiva</h4>
+            <p>Tomamos un uso particular de una palabra y lo absolutizamos, creyendo que <em>siempre</em> funciona así. El <em>Tractatus</em> mismo es víctima de esto: tomó el modelo de la proposición descriptiva («la manzana es roja») y lo aplicó a <em>todas</em> las proposiciones con sentido.</p>
+        </div>
+
+        <h3>3. El método terapéutico</h3>
+        <p>El método del segundo Wittgenstein no es constructivo sino <strong>descriptivo y terapéutico</strong>. No construye teorías ni establece tesis: describe el uso real de las expresiones en los juegos de lenguaje ordinarios, y muestra cómo los filósofos han tomado esas expresiones fuera de ese contexto, generando confusión.</p>
+        <p>«Devolvemos las palabras de su uso metafísico a su uso ordinario» (IF §116). La curación del problema filosófico no es una teoría que lo resuelve, sino una perspicuidad —una claridad— sobre el uso del lenguaje que hace que el problema desaparezca. No la respuesta correcta a la pregunta, sino la comprensión de que la pregunta era mal planteada.</p>
+
+        <h3>4. ¿Significa esto que la filosofía no sirve para nada?</h3>
+        <p>Esta pregunta es comprensible, pero Wittgenstein la rechazaría. La terapia filosófica tiene un objetivo preciso y valioso: <strong>la claridad</strong>. Cuando somos víctimas de un embrujo del lenguaje —cuando una confusión lingüística nos hace creer que hay un problema donde no lo hay— esa confusión puede tener consecuencias reales: en la manera de entender la mente, la moral, la religión, la ciencia. Liberar a la inteligencia de esos embrujos es una tarea filosófica de primera importancia.</p>
+        <p>Además, el diagnóstico de que «esto es un pseudoproblema» no siempre es correcto ni fácil de establecer. Muchas veces lo que parece una confusión lingüística resulta ser un problema genuino y profundo. La filosofía terapéutica exige una atención extraordinariamente fina al lenguaje, una sensibilidad para los matices y los contextos que constituye en sí misma una forma de sabiduría filosófica.</p>
+
+        <div class="quote-box">
+            «El filósofo trata una pregunta como una enfermedad.»
+            <cite>— Wittgenstein, <em>Investigaciones filosóficas</em>, § 255</cite>
+        </div>
+
+        <div class="highlight-box purple">
+            <strong>Una pregunta final:</strong> ¿Es el propio Wittgenstein víctima de sus propias trampas? Si todos los problemas filosóficos son confusiones lingüísticas, ¿qué son las <em>Investigaciones filosóficas</em> mismas: una obra filosófica que plantea y resuelve problemas, o una terapia que disuelve ilusiones? ¿Y puede distinguirse realmente una cosa de la otra?
+        </div>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════════════════ -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+function openModal(id) {
+    const overlay = document.getElementById(id);
+    overlay.style.display = 'flex';
+    requestAnimationFrame(() => overlay.classList.add('active'));
+    document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+    const overlay = document.getElementById(id);
+    const box = overlay.querySelector('.modal-box');
+    box.classList.remove('fullscreen');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { overlay.style.display = 'none'; }, 300);
+}
+function toggleFullscreen(btn) {
+    const box = btn.closest('.modal-box');
+    box.classList.toggle('fullscreen');
+    const isFS = box.classList.contains('fullscreen');
+    btn.innerHTML = isFS
+        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>';
+    btn.title = isFS ? 'Salir de pantalla completa' : 'Pantalla completa';
+}
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(overlay.id); });
+});
+function openPage(id) {
+    const page = document.getElementById(id);
+    page.style.display = 'block';
+    requestAnimationFrame(() => page.classList.add('active'));
+    document.body.style.overflow = 'hidden';
+    page.scrollTop = 0;
+}
+function closePage(id) {
+    const page = document.getElementById(id);
+    page.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { page.style.display = 'none'; }, 300);
+}
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m.id));
+        document.querySelectorAll('.page-overlay.active').forEach(p => closePage(p.id));
+    }
+});
+</script>
+</body>
+</html>
